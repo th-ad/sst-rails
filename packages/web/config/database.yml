@@ -18,11 +18,14 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
+  database: <%= DatabaseConfig.database %>
+  host: <%= DatabaseConfig.host %>
+  password: <%= DatabaseConfig.password %>
+  port: <%= DatabaseConfig.port %>
+  username: <%= DatabaseConfig.username %>
 
 development:
   <<: *default
-  database: web_development
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -80,6 +83,3 @@ test:
 #
 production:
   <<: *default
-  database: web_production
-  username: web
-  password: <%= ENV["WEB_DATABASE_PASSWORD"] %>
