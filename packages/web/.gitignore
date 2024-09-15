@@ -33,3 +33,8 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/config/*.local.yml
+/config/credentials/local.*
+
+/config/credentials/production.key
