@@ -12,7 +12,7 @@ cluster.addService("Web", {
     ports: [{ listen: "80/http", forward: "3000/http" }]
   },
   dev: {
-    command: "bin/rails c"
+    command: "bin/rails s"
   },
   environment: {
     RAILS_LOG_LEVEL: "debug",
